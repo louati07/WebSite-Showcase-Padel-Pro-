@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Court — PadelPro</title>
+    <meta name="description" content="Reserve your padel court at PadelPro. Select your court, choose a time, and confirm your booking instantly.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-grid"></div>
+
+<!-- Header -->
+<header class="site-header" id="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="PadelPro" class="logo-icon">PADEL<span class="logo-accent">PRO</span></a>
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="courts.html">Courts</a>
+            <a href="booking.html">Book</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="nav-cta">Reserve Now</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main class="booking-page">
+    <div class="container">
+
+        <div class="booking-header">
+            <div class="eyebrow">PadelPro</div>
+            <h1>Book<span> Your Court</span></h1>
+        </div>
+
+        <div class="booking-steps">
+            <div class="step active"><div class="step-num">1</div> Details</div>
+            <div class="step"><div class="step-num">2</div> Review</div>
+            <div class="step"><div class="step-num">3</div> Confirm</div>
+        </div>
+
+        <div class="booking-card">
+            <form id="booking-form" novalidate>
+                <div class="form-grid">
+
+                    <div class="form-section-title">Your Information</div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="form-input" placeholder="e.g. Ahmed" required>
+                        <span class="form-error" id="first_name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="form-input" placeholder="e.g. Ben Ali" required>
+                        <span class="form-error" id="last_name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+216 XX XXX XXX" required>
+                        <span class="form-error" id="phone-error"></span>
+                    </div>
+
+                    <div class="divider"></div>
+                    <div class="form-section-title">Booking Details</div>
+
+                    <div class="form-group full">
+                        <label class="form-label" for="court_id">Select Court</label>
+                        <select id="court_id" name="court_id" class="form-input" required>
+                            <option value="" disabled selected>Loading courts...</option>
+                        </select>
+                        <span class="form-error" id="court_id-error"></span>
+                    </div>
+
+                    <div class="form-group full">
+                        <label class="form-label" for="booking_date">Date</label>
+                        <input type="date" id="booking_date" name="booking_date" class="form-input" required>
+                        <span class="form-error" id="booking_date-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="start_time">Start Time</label>
+                        <input type="time" id="start_time" name="start_time" class="form-input" required>
+                        <span class="form-error" id="start_time-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="end_time">End Time</label>
+                        <input type="time" id="end_time" name="end_time" class="form-input" required>
+                        <span class="form-error" id="end_time-error"></span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-group full">
+                        <label class="form-label" for="promo_code">Promo / Reward Code <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#36364a;font-size:11px;">(optional — from Padel game)</span></label>
+                        <div class="promo-wrap">
+                            <span class="promo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
+                            <input type="text" id="promo_code" name="promo_code" class="form-input" placeholder="Enter your code" style="padding-left:42px;">
+                        </div>
+                        <div class="promo-status" id="promo-status"></div>
+                    </div>
+
+                    <div class="price-preview">
+                        <div class="price-left">
+                            <div class="price-label">Estimated Total</div>
+                            <div class="price-sub" id="price-breakdown">Select a court and time</div>
+                        </div>
+                        <div class="price-right">
+                            <div class="price-amount" id="price-amount">—</div>
+                            <div class="price-unit" id="price-unit"></div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="booking-summary" id="booking-summary">
+                        <div class="summary-title">Booking Summary</div>
+                        <div class="summary-grid">
+                            <div class="summary-item"><span class="s-label">Player</span><span class="s-value" id="s-name">—</span></div>
+                            <div class="summary-item"><span class="s-label">Email</span><span class="s-value" id="s-email">—</span></div>
+                            <div class="summary-item"><span class="s-label">Court</span><span class="s-value" id="s-court">—</span></div>
+                            <div class="summary-item"><span class="s-label">Date</span><span class="s-value" id="s-date">—</span></div>
+                            <div class="summary-item"><span class="s-label">Time</span><span class="s-value" id="s-time">—</span></div>
+                            <div class="summary-item"><span class="s-label">Duration</span><span class="s-value" id="s-duration">—</span></div>
+                        </div>
+                        <div class="summary-total">
+                            <span class="total-label">Total</span>
+                            <span class="total-value" id="s-total">—</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submit-btn">Confirm Reservation →</button>
+                </div>
+            </form>
+        </div>
+
+        <p class="booking-footer">Reservations confirmed · Cancellations free up to 2h before</p>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="index.html" class="logo"><img src="assets/images/logo.png" alt="PadelPro" class="logo-icon">PADEL<span class="logo-accent">PRO</span></a><p>Tunisia's premier padel destination.</p></div>
+            <div class="footer-col"><h4>Navigate</h4><a href="index.html">Home</a><a href="courts.html">Courts</a><a href="booking.html">Book</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+            <div class="footer-col"><h4>Services</h4><a href="#">Open Play</a><a href="#">Tournaments</a><a href="#">Coaching</a></div>
+            <div class="footer-col"><h4>Contact</h4><a href="mailto:contact@padelpro.tn">contact@padelpro.tn</a><a href="tel:+21671000000">+216 71 000 000</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 PadelPro.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+    </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

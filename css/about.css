@@ -1,0 +1,46 @@
+/* PadelPro — About Page Styles */
+.about-hero { position: relative; height: 50vh; min-height: 360px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: var(--header-h); }
+.about-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.about-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,15,0.5), rgba(10,10,15,0.9)); }
+.about-hero-content { position: relative; z-index: 2; text-align: center; }
+.about-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 8vw, 80px); color: var(--text); }
+.about-hero h1 span { color: var(--accent); }
+
+/* History */
+.history { padding: var(--space-3xl) 0; }
+.history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+.history-text h2 { font-family: var(--font-display); font-size: 42px; color: var(--text); margin-bottom: var(--space-lg); }
+.history-text h2 span { color: var(--accent); }
+.history-text p { color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--space-md); font-size: 15px; }
+.history-image { border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border); }
+.history-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Values */
+.values { background: var(--bg-alt); padding: var(--space-3xl) 0; }
+.values-header { text-align: center; margin-bottom: var(--space-xl); }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+.value-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; transition: all var(--duration); }
+.value-card:hover { transform: translateY(-4px); border-color: var(--border-light); box-shadow: var(--shadow-lg); }
+.value-icon { width: 64px; height: 64px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto var(--space-lg); }
+.value-card:nth-child(1) .value-icon { background: var(--accent-dim); }
+.value-card:nth-child(2) .value-icon { background: var(--accent-2-dim); }
+.value-card:nth-child(3) .value-icon { background: var(--accent-3-dim); }
+.value-card h3 { font-family: var(--font-alt); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: var(--space-sm); }
+.value-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+/* Team */
+.team { padding: var(--space-3xl) 0; }
+.team-header { text-align: center; margin-bottom: var(--space-xl); }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg); }
+.team-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--duration); }
+.team-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 8px 30px rgba(200,255,0,0.08); }
+.team-photo { position: relative; height: 280px; overflow: hidden; }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-slow) var(--ease-out), filter var(--duration); filter: grayscale(30%); }
+.team-card:hover .team-photo img { transform: scale(1.06); filter: grayscale(0%); }
+.team-photo .team-role-badge { position: absolute; bottom: var(--space-md); left: var(--space-md); background: var(--accent); color: var(--bg); padding: 4px 12px; border-radius: var(--radius-full); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0; transform: translateY(8px); transition: all var(--duration); }
+.team-card:hover .team-role-badge { opacity: 1; transform: translateY(0); }
+.team-info { padding: var(--space-lg); }
+.team-info h3 { font-family: var(--font-alt); font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.team-info p { font-size: 13px; color: var(--muted); }
+
+@media (max-width: 768px) { .history-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: 1fr; } }

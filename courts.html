@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courts — PadelPro</title>
+    <meta name="description" content="Discover PadelPro's 7 professional padel courts. Filter by indoor, outdoor, or panoramic. View rates and book your preferred court.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/courts.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-grid"></div>
+
+<!-- Header -->
+<header class="site-header" id="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="PadelPro" class="logo-icon">PADEL<span class="logo-accent">PRO</span></a>
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="courts.html">Courts</a>
+            <a href="booking.html">Book</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="nav-cta">Reserve Now</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="section-label" style="justify-content:center;">Court Catalog</div>
+        <h1 class="section-title">Explore Our <span>Courts</span></h1>
+        <p class="section-subtitle">Choose from 7 professional-grade padel courts. Indoor climate-controlled, sun-kissed outdoor, or premium panoramic — find your perfect match.</p>
+    </div>
+</section>
+
+<!-- Filter + Grid -->
+<section class="section" style="padding-top:0;">
+    <div class="container">
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>Type</label>
+                <div class="filter-pills">
+                    <button class="filter-pill active" data-type="all">All</button>
+                    <button class="filter-pill" data-type="Indoor">Indoor</button>
+                    <button class="filter-pill" data-type="Outdoor">Outdoor</button>
+                    <button class="filter-pill" data-type="Panoramic">Panoramic</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label>Max Budget</label>
+                <div class="filter-range">
+                    <input type="range" id="price-range" min="30" max="200" value="200" step="10">
+                    <span class="range-value" id="range-value">200 TND</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="courts-grid" id="courts-grid">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal-overlay" id="court-modal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <img class="modal-image" id="modal-img" src="" alt="Court">
+        <div class="modal-body">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <div class="modal-meta">
+                <div class="modal-meta-item"><span class="meta-label">Surface Type</span><span class="meta-value" id="modal-type"></span></div>
+                <div class="modal-meta-item"><span class="meta-label">Hourly Rate</span><span class="meta-value" id="modal-rate"></span></div>
+                <div class="modal-meta-item"><span class="meta-label">Status</span><span class="meta-value" id="modal-status" style="color:var(--success)"></span></div>
+                <div class="modal-meta-item"><span class="meta-label">Features</span><span class="meta-value">Glass Walls, LED Lighting</span></div>
+            </div>
+            <a id="modal-book-link" href="booking.html" class="btn btn-primary" style="width:100%;text-align:center;">Book This Court →</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="PadelPro" class="logo-icon">PADEL<span class="logo-accent">PRO</span></a>
+                <p>Tunisia's premier padel destination. 7 world-class courts, expert coaching, and a vibrant sports community.</p>
+            </div>
+            <div class="footer-col"><h4>Navigate</h4><a href="index.html">Home</a><a href="courts.html">Our Courts</a><a href="booking.html">Book Now</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+            <div class="footer-col"><h4>Services</h4><a href="#">Open Play</a><a href="#">Tournaments</a><a href="#">Private Coaching</a></div>
+            <div class="footer-col"><h4>Contact</h4><a href="mailto:contact@padelpro.tn">contact@padelpro.tn</a><a href="tel:+21671000000">+216 71 000 000</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 PadelPro. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+    </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/courts.js"></script>
+</body>
+</html>

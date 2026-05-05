@@ -1,0 +1,27 @@
+# Environment & Credentials
+.env
+
+# Composer dependencies (auto-generated)
+vendor/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Setup scripts (development only)
+setup.php
+setup_images.bat
+
+# Logs
+*.log
+error_log
+
+# Composer cache
+composer.phar

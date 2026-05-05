@@ -1,0 +1,61 @@
+/* PadelPro — Courts Catalog Styles */
+.page-hero { padding-top: calc(var(--header-h) + var(--space-3xl)); padding-bottom: var(--space-xl); text-align: center; }
+.page-hero .section-subtitle { margin: 0 auto; }
+
+/* Filter Bar */
+.filter-bar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-xl); display: flex; align-items: center; gap: var(--space-lg); flex-wrap: wrap; }
+.filter-group { display: flex; align-items: center; gap: var(--space-sm); }
+.filter-group label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.filter-pills { display: flex; gap: 6px; }
+.filter-pill { padding: 8px 18px; border-radius: var(--radius-full); border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 13px; font-weight: 500; font-family: var(--font-alt); cursor: pointer; transition: all var(--duration-fast); }
+.filter-pill:hover { border-color: var(--border-light); color: var(--text); }
+.filter-pill.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.filter-range { display: flex; align-items: center; gap: var(--space-sm); }
+.filter-range input[type="range"] { -webkit-appearance: none; appearance: none; width: 140px; height: 4px; background: var(--border); border-radius: 2px; outline: none; }
+.filter-range input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; cursor: pointer; box-shadow: 0 0 8px var(--accent-glow); }
+.filter-range .range-value { font-size: 14px; font-weight: 600; color: var(--accent); min-width: 60px; }
+
+/* Courts Grid */
+.courts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+.court-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--duration) var(--ease-out); position: relative; cursor: pointer; }
+.court-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px var(--accent-soft); }
+.court-card-image { position: relative; height: 200px; overflow: hidden; }
+.court-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-slow) var(--ease-out); }
+.court-card:hover .court-card-image img { transform: scale(1.08); }
+.court-card-image .badge { position: absolute; top: var(--space-md); left: var(--space-md); z-index: 2; }
+.court-card-image::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to top, rgba(22,22,31,1) 0%, transparent 100%); }
+.court-card-body { padding: var(--space-lg); padding-top: var(--space-sm); }
+.court-card-title { font-family: var(--font-alt); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: var(--space-xs); }
+.court-card-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-md); }
+.court-card-footer { display: flex; align-items: center; justify-content: space-between; }
+.court-card-price .amount { font-family: var(--font-display); font-size: 32px; color: var(--accent); line-height: 1; }
+.court-card-price .unit { font-size: 12px; color: var(--muted); text-transform: uppercase; }
+.court-card-btn { padding: 10px 20px; border-radius: var(--radius-md); background: var(--accent-dim); color: var(--accent); font-size: 13px; font-weight: 600; border: 1px solid rgba(200,255,0,0.2); cursor: pointer; transition: all var(--duration-fast); font-family: var(--font-alt); }
+.court-card-btn:hover { background: var(--accent); color: var(--bg); }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: var(--space-lg); opacity: 0; visibility: hidden; transition: all var(--duration); }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-xl); max-width: 560px; width: 100%; max-height: 85vh; overflow-y: auto; transform: scale(0.9) translateY(20px); transition: transform var(--duration) var(--ease-out); position: relative; }
+.modal-overlay.active .modal { transform: scale(1) translateY(0); }
+.modal-close { position: absolute; top: var(--space-md); right: var(--space-md); width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); border: none; color: var(--text); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 3; transition: all var(--duration-fast); }
+.modal-close:hover { background: var(--error); color: #fff; }
+.modal-image { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+.modal-body { padding: var(--space-xl); }
+.modal-body h2 { font-family: var(--font-display); font-size: 36px; color: var(--text); margin-bottom: var(--space-sm); }
+.modal-body p { color: var(--text-secondary); line-height: 1.7; margin-bottom: var(--space-lg); }
+.modal-meta { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-lg); }
+.modal-meta-item { display: flex; flex-direction: column; gap: 2px; }
+.modal-meta-item .meta-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; }
+.modal-meta-item .meta-value { font-size: 16px; font-weight: 600; color: var(--text); }
+
+/* Tooltip */
+.court-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-8px); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-md); min-width: 220px; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transition: all var(--duration-fast); z-index: 10; pointer-events: none; }
+.court-card:hover .court-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(-12px); }
+.tooltip-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding: 4px 0; }
+.tooltip-row .tooltip-label { color: var(--muted); }
+.tooltip-row .tooltip-value { color: var(--text); font-weight: 600; }
+.no-results { grid-column: 1 / -1; text-align: center; padding: var(--space-3xl); color: var(--muted); font-size: 16px; }
+.no-results .no-results-icon { font-size: 48px; margin-bottom: var(--space-md); display: block; }
+
+@media (max-width: 768px) { .filter-bar { flex-direction: column; align-items: flex-start; } .courts-grid { grid-template-columns: 1fr; } .court-tooltip { display: none; } }
